@@ -22,10 +22,14 @@ public class SecondActivity extends AppCompatActivity {
         image= (ImageView) findViewById(R.id.image_view_secondActivity);
 
         Intent intent = getIntent();
-        Dog doggy= (Dog) intent.getSerializableExtra(Keys.DOG);
-        name.setText(doggy.getName());
-        age.setText(doggy.getAge());
-        image.setImageResource(doggy.getPhotoId());
+        int i=intent.getIntExtra("IMAGE",1);
+        image.setImageResource(i);
+        name.setText(intent.getStringExtra("NAME"));
+        age.setText(intent.getStringExtra("AGE"));
+//        Dog doggy= (Dog) intent.getSerializableExtra(Keys.DOG);
+//        name.setText(doggy.getName());
+//        age.setText(doggy.getAge());
+//        image.setImageResource(doggy.getPhotoId());
 
 
 
