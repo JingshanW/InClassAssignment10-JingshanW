@@ -18,6 +18,8 @@ public class Dog implements Serializable
         this.photoId = photoId;
     }
 
+    public Dog(){};
+
     public String getName() {
         return name;
     }

@@ -57,7 +57,6 @@ public class DogViewHolder extends RecyclerView.ViewHolder {
     private Context context;
 
 
-
     public DogViewHolder(View itemView, Context context) {
         super(itemView);
         cardView = (CardView) itemView.findViewById(R.id.card_view_dog);
@@ -67,8 +66,7 @@ public class DogViewHolder extends RecyclerView.ViewHolder {
         this.context = context;
     }
 
-    public void bind(final
-                     Dog dog) {
+    public void bind(final Dog dog) {
         dogNameView.setText(dog.name);
         dogAgeView.setText(dog.age);
         dogPhotoView.setImageResource(dog.photoId);
@@ -76,31 +74,15 @@ public class DogViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, SecondActivity.class);
-                intent.putExtra("NAME", dogNameView.getText());
-                intent.putExtra("AGE", dogAgeView.getText());
-                intent.putExtra("IMAGE", dogPhotoView.getId());
+//                intent.putExtra("NAME",dogNameView.getText());
+//                intent.putExtra("AGE",dogAgeView.getText());
+//                intent.putExtra("IMAGE",dogPhotoView.getId());
+                intent.putExtra(Keys.DOG, dog);
                 context.startActivity(intent);
 
             }
         });
-//        cardView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //Toast.makeText(context, dogNameView.getText(), Toast.LENGTH_SHORT).show();
-//
-////                Intent intent =new Intent(v.getContext(), SecondActivity.class);
-////
-////                Dog d=new Dog(dogNameView.getText().toString(),dogAgeView.getText().toString(),dogPhotoView.getId());
-////                intent.putExtra(Keys.DOG,d);
-////                v.getContext().startActivity(intent);
-//
-//
-//            }
-//
-//
-//
-//
-//        });
+
     }
 
 

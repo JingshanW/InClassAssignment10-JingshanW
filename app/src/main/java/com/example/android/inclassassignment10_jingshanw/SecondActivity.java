@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import static com.example.android.inclassassignment10_jingshanw.Keys.DOG;
+
 public class SecondActivity extends AppCompatActivity {
 
     private TextView name;
@@ -22,14 +24,20 @@ public class SecondActivity extends AppCompatActivity {
         image= (ImageView) findViewById(R.id.image_view_secondActivity);
 
         Intent intent = getIntent();
-        int i=intent.getIntExtra("IMAGE",1);
-        image.setImageResource(i);
-        name.setText(intent.getStringExtra("NAME"));
-        age.setText(intent.getStringExtra("AGE"));
-//        Dog doggy= (Dog) intent.getSerializableExtra(Keys.DOG);
-//        name.setText(doggy.getName());
-//        age.setText(doggy.getAge());
-//        image.setImageResource(doggy.getPhotoId());
+        Dog dog= (Dog) intent.getSerializableExtra(DOG);
+        name.setText(dog.getName());
+        age.setText(dog.getAge());
+        image.setImageResource(dog.getPhotoId());
+
+
+//        name.setText(intent.getStringExtra("NAME"));
+//        age.setText(dog.getAge());
+//        image.setImageResource(dog.getPhotoId());
+//        int i=intent.getIntExtra("IMAGE",1);
+//        image.setImageResource(i);
+//        name.setText(intent.getStringExtra("NAME"));
+//        age.setText(intent.getStringExtra("AGE"));
+
 
 
 
